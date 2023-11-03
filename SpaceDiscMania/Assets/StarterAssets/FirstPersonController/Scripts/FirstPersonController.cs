@@ -120,6 +120,10 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			if(this.gameObject.transform.position.y < -5)
+			{
+				this.gameObject.transform.position = responpoint.transform.position;
+			}
 		}
 
 		private void LateUpdate()
