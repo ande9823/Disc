@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0.029152213, g: 0.064445764, b: 0.12695098, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152077, g: 0.064445406, b: 0.12695017, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -863,6 +863,10 @@ PrefabInstance:
     - target: {fileID: 4501877893874324670, guid: 381c62f524ea3cb4c901ab9c3f13759c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661779638700572377, guid: 381c62f524ea3cb4c901ab9c3f13759c, type: 3}
+      propertyPath: shotDelay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5661779638700572381, guid: 381c62f524ea3cb4c901ab9c3f13759c, type: 3}
       propertyPath: m_Name
@@ -6801,6 +6805,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   discPrefab: {fileID: 4257942456235736876, guid: 164e6d20f92b1824e846bece15051cc3, type: 3}
   cam: {fileID: 1010251746}
+  hasThrown: 0
+  throwDelay: 3
 --- !u!4 &5901452234007747302
 Transform:
   m_ObjectHideFlags: 0

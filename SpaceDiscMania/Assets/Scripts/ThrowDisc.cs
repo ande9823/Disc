@@ -7,6 +7,9 @@ public class ThrowDisc : MonoBehaviour
     public GameObject discPrefab;
     public Camera cam;
 
+    public bool hasThrown = false;
+    public int throwDelay = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +20,31 @@ public class ThrowDisc : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            Ray r = cam.ScreenPointToRay(Input.mousePosition);
+            if(hasThrown == false) {
+                hasThrown = true;
 
-            Vector3 dir = r.GetPoint(1) - r.GetPoint(0);
+                Ray r = cam.ScreenPointToRay(Input.mousePosition);
 
-            GameObject disc = Instantiate(discPrefab, r.GetPoint(2), Quaternion.LookRotation(dir));
+                Vector3 dir = r.GetPoint(1) - r.GetPoint(0);
 
-            disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 20;
-            Destroy(disc, 5);
+                GameObject disc = Instantiate(discPrefab, r.GetPoint(2), Quaternion.LookRotation(dir));
+
+                disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 20;
+                StartCoroutine(DestroyDisc(disc));
+                
+                Invoke("Reload", throwDelay);
+            }
         }
     }
+
+    private IEnumerator DestroyDisc(GameObject disc) {
+
+        yield return new WaitForSeconds(5);
+        Destroy(disc);
+    }
+
+    public void Reload() {
+        hasThrown = false;
+    }
+
 }
