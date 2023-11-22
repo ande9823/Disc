@@ -11,7 +11,25 @@ public class Enemy : MonoBehaviour
     public int shotDelay = 5;
 
     public Animator animator;
+    /*
+    PatrolBehavior patrolBehavior;
+    public Transform randomWaypoint;
 
+    public void Start()
+    {
+        randomWaypoint.position = new Vector3(transform.position.x - Random.Range(0, 5), 0, transform.position.z - Random.Range(0, 5));
+
+        patrolBehavior = new PatrolBehavior();
+        patrolBehavior.wayPoints.Insert(0,randomWaypoint);
+    }
+
+    public void Update()
+    {
+        randomWaypoint.position = new Vector3(transform.position.x - Random.Range(0, 5), 0, transform.position.z - Random.Range(0, 5));
+        patrolBehavior.wayPoints.Insert(0, randomWaypoint);
+        patrolBehavior.agent.SetDestination(patrolBehavior.wayPoints[0].position);
+    }
+    */
     public void Shoot()
     {
         if (hasShot == false) {
