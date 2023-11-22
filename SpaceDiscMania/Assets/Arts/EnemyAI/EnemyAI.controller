@@ -174,9 +174,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120e20453bb7a1e4ebad99b647e2c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:SpaceDiscMania/Assets/Arts/EnemyAI/EnemyAI.controller
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
+=======
+  wayPoints: []
+>>>>>>> cecf62c90914945bf5cb6bad4192fa10e5b8bac1:SpaceDiscMania/Assets/EnemyAI/EnemyAI.controller
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
