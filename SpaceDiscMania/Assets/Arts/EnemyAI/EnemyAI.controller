@@ -174,13 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120e20453bb7a1e4ebad99b647e2c960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:SpaceDiscMania/Assets/Arts/EnemyAI/EnemyAI.controller
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-=======
   wayPoints: []
->>>>>>> cecf62c90914945bf5cb6bad4192fa10e5b8bac1:SpaceDiscMania/Assets/EnemyAI/EnemyAI.controller
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -420,7 +414,7 @@ AnimatorStateMachine:
     m_Position: {x: 550, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6069711735247027929}
-    m_Position: {x: 550, y: 260, z: 0}
+    m_Position: {x: 470, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2094280387263529570}
     m_Position: {x: 470, y: 350, z: 0}
