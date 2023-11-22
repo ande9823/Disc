@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatrolBehavior : StateMachineBehaviour
 {
     float timer;
-    List<Transform> wayPoints = new List<Transform>();
+    public List<Transform> wayPoints = new List<Transform>();
     NavMeshAgent agent;
 
     Transform player;
