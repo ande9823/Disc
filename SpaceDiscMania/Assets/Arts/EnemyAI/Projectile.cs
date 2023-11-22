@@ -10,14 +10,11 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Projectile collision");
-
+        
         GameObject impact  = Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(impact, 2);
 
         if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player")) {
-            Debug.Log("" + collision.gameObject.name);
-
             Rigidbody enemy = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 difference = enemy.transform.position - transform.position;
             difference = difference.normalized * knockback;
