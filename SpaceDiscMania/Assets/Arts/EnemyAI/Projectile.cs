@@ -6,18 +6,17 @@ public class Projectile : MonoBehaviour
     public GameObject impactEffect;
     public int knockback = 5;
     public float radius = 3;
-    public int damageAmount = 15;
+    public int damageAmount = 20;
 
     private void OnCollisionEnter(Collision collision)
     {
-        
         GameObject impact  = Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(impact, 2);
 
         if(collision.gameObject.CompareTag("Player")) {
 
             
-            HealthBarSimple healthBar = collision.gameObject.GetComponent<HealthBarSimple>();
+            PlayerHealthBar healthBar = collision.gameObject.GetComponent<PlayerHealthBar>();
             healthBar.TakeDamage(damageAmount);
 
             /*
@@ -29,9 +28,7 @@ public class Projectile : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-
-
-            HealthBarSimple healthBar = collision.gameObject.GetComponent<HealthBarSimple>();
+            EnemyHealthBar healthBar = collision.gameObject.GetComponent<EnemyHealthBar>();
             healthBar.TakeDamage(damageAmount);
         }
             /*

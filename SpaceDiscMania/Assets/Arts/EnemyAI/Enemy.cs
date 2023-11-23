@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    public int enemyHP = 100;
+    public Slider healthBar;
     public GameObject projectile;
     public Transform projectilePoint;
 
     public bool hasShot = false;
-    public int shotDelay = 5;
+    public int shotDelay = 1;
 
     public Animator animator;
 
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
             GameObject projectileObj = Instantiate(projectile, projectilePoint.position, Quaternion.identity);
             Rigidbody rb = projectileObj.GetComponent<Rigidbody>();
 
-            rb.AddForce(transform.forward * 30f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
             rb.AddForce(transform.up * 7, ForceMode.Impulse);
 
             Invoke("Reload", shotDelay);
@@ -31,21 +32,7 @@ public class Enemy : MonoBehaviour
         hasShot = false;
     }
     private IEnumerator DestroyProjectile(GameObject projectile) {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         Destroy(projectile);
-    }
-
-    public void TakeDamage(int damageAmount)
-    {
-        enemyHP -= damageAmount;
-        if(enemyHP <= 0)
-        {
-            animator.SetTrigger("death");
-            GetComponent<CapsuleCollider>().enabled = false;
-        }
-        else
-        {
-            animator.SetTrigger("damage");
-        }
     }
 }

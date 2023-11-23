@@ -13,15 +13,6 @@ public class ThrowDisc : MonoBehaviour
 
     public Slider coolDownSlider;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
@@ -47,8 +38,6 @@ public class ThrowDisc : MonoBehaviour
         yield return new WaitForSeconds(5);
         Destroy(disc);
     }
-
-
 
     IEnumerator reloadCorutine()
     {
