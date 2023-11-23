@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThrowDisc : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class ThrowDisc : MonoBehaviour
 
     public bool hasThrown = false;
     public int throwDelay = 3;
+
+    public Slider coolDownSlider;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +36,8 @@ public class ThrowDisc : MonoBehaviour
 
                 disc.GetComponent<Rigidbody>().velocity = disc.transform.forward * 20;
                 StartCoroutine(DestroyDisc(disc));
-                
-                Invoke("Reload", throwDelay);
+
+                StartCoroutine(reloadCorutine());
             }
         }
     }
@@ -43,8 +48,15 @@ public class ThrowDisc : MonoBehaviour
         Destroy(disc);
     }
 
-    public void Reload() {
+
+
+    IEnumerator reloadCorutine()
+    {
+        coolDownSlider.value = 0;
+
+        yield return new WaitForSeconds(throwDelay);
+        
+        coolDownSlider.value = 1;
         hasThrown = false;
     }
-
 }
