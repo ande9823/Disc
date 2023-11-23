@@ -9,7 +9,7 @@ public class ThrowDisc : MonoBehaviour
     public Camera cam;
 
     public bool hasThrown = false;
-    public int throwDelay = 3;
+    public int throwDelay = 1;
 
     public Slider coolDownSlider;
 

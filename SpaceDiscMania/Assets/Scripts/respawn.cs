@@ -9,7 +9,9 @@ public class respawn : MonoBehaviour
     public void Update()
     {
         if (transform.position.y < threshold)
+        {
             transform.position = new Vector3(0, 0, 0);
+        }
     }
 }
 
