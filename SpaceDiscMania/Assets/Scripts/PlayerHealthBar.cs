@@ -19,6 +19,10 @@ public class PlayerHealthBar : MonoBehaviour
         {
             Restart();
         }
+        if(transform.position.y < -10) 
+        {
+            Restart();
+        }
     }
 
     void Awake()
