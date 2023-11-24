@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 4111790180346853265}
   - component: {fileID: 4111790180351207513}
   - component: {fileID: 4111790180365373455}
+  - component: {fileID: 9016949516962479288}
   m_Layer: 0
   m_Name: Platform(Jumper)
   m_TagString: Untagged
@@ -343,3 +344,17 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4111790180346949179}
   m_Enabled: 1
+--- !u!114 &9016949516962479288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111790180349172147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de4ddc210ae1774d9f58046bac0fd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.1
+  frequency: 1

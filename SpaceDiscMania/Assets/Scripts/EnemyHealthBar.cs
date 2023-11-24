@@ -24,7 +24,7 @@ public class EnemyHealthBar : MonoBehaviour
         if (HPbar.value <= 1)
         {
             animator.SetTrigger("death");
-            GetComponent<CapsuleCollider>().enabled = false;
+            //GetComponent<CapsuleCollider>().enabled = false;
         }
         else
         {
