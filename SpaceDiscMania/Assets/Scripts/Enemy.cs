@@ -23,7 +23,8 @@ public class Enemy : MonoBehaviour
             rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
             rb.AddForce(transform.up * 7, ForceMode.Impulse);
 
-            Invoke("Reload", shotDelay);
+            //Invoke("Reload", shotDelay);
+            StartCoroutine(ReloadProjectile());
             StartCoroutine(DestroyProjectile(projectileObj));
         }
     }
@@ -34,5 +35,10 @@ public class Enemy : MonoBehaviour
     private IEnumerator DestroyProjectile(GameObject projectile) {
         yield return new WaitForSeconds(1);
         Destroy(projectile);
+    }
+    private IEnumerator ReloadProjectile()
+    {
+        yield return new WaitForSeconds(shotDelay);
+        hasShot = false;
     }
 }
