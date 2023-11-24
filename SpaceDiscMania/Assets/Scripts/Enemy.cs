@@ -23,8 +23,8 @@ public class Enemy : MonoBehaviour
             rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
             rb.AddForce(transform.up * 7, ForceMode.Impulse);
 
-            //Invoke("Reload", shotDelay);
-            StartCoroutine(ReloadProjectile());
+            Invoke("Reload", shotDelay);
+            //StartCoroutine(ReloadProjectile());
             StartCoroutine(DestroyProjectile(projectileObj));
         }
     }

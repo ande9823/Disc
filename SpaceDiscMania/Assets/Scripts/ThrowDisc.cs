@@ -42,16 +42,8 @@ public class ThrowDisc : MonoBehaviour
     IEnumerator reloadCorutine()
     {
         coolDownSlider.value = 0;
-        yield return new WaitForSeconds(throwDelay / 5);
-        coolDownSlider.value = 1 / 5;
-        yield return new WaitForSeconds(throwDelay / 5);
-        coolDownSlider.value = 2 / 5;
-        yield return new WaitForSeconds(throwDelay / 5);
-        coolDownSlider.value = 3 / 5;
-        yield return new WaitForSeconds(throwDelay / 5);
-        coolDownSlider.value = 4 / 5;
-        yield return new WaitForSeconds(throwDelay / 5);
-
+        
+        yield return new WaitForSeconds(throwDelay);
         coolDownSlider.value = 1;
         hasThrown = false;
     }

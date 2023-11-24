@@ -57,7 +57,20 @@ public class PlayerHealthBar : MonoBehaviour
         player.SetActive(false);
         player.transform.position = respawn.transform.position;
         currentHealth = 100;
-        HPBar.value = 100;
+        HPBar.value = currentHealth;
         player.SetActive(true);
+    }
+
+
+    public void restoreHealth()
+    {
+        currentHealth += 20;
+
+        if(currentHealth > 100)
+        {
+            currentHealth = 100;
+        }
+
+        HPBar.value = currentHealth;
     }
 }

@@ -32,7 +32,7 @@ public class LaunchPad : MonoBehaviour
 
     private IEnumerator ResetGravity(GameObject obj) {
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         obj.GetComponent<StarterAssets.FirstPersonController>().JumpHeight = 1.2f;
     }
 }

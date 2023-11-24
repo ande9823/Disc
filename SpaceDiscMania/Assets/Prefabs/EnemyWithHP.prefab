@@ -999,17 +999,17 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4221393549559255081
 MonoBehaviour:
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   projectile: {fileID: 5464965370352236578, guid: 55e5d0169a564244b9dfbcaed3c96b80, type: 3}
   projectilePoint: {fileID: 4221393549316487033}
   hasShot: 0
-  shotDelay: 5
+  shotDelay: 1
   animator: {fileID: 4221393549559255083}
 --- !u!114 &5572171437488274225
 MonoBehaviour:
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   HPbar: {fileID: 3734130673691041019}
   animator: {fileID: 4221393549559255083}
 --- !u!1 &4370505006925933107

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class HealthPickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Cross;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealthBar>().restoreHealth();
+            Cross.SetActive(false);
+            StartCoroutine(SetObject());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SetObject()
     {
-        
+        yield return new WaitForSeconds(10);
+        Cross.SetActive(true);
     }
 }
