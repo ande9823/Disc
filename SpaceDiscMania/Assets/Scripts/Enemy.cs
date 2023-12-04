@@ -9,13 +9,15 @@ public class Enemy : MonoBehaviour
     public Transform projectilePoint;
 
     public bool hasShot = false;
-    public int shotDelay = 1;
+    public int shotDelay = 0;
 
     public Animator animator;
+    public AudioSource shooting;
 
     public void Shoot()
     {
         if (hasShot == false) {
+            shooting.Play();
             hasShot = true;
             GameObject projectileObj = Instantiate(projectile, projectilePoint.position, Quaternion.identity);
             Rigidbody rb = projectileObj.GetComponent<Rigidbody>();

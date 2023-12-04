@@ -8,12 +8,16 @@ public class Projectile : MonoBehaviour
     public float radius = 3;
     public int damageAmount = 20;
 
+    public AudioSource goBOOM;
+
     private void OnCollisionEnter(Collision collision)
     {
         GameObject impact  = Instantiate(impactEffect, transform.position, Quaternion.identity);
+        
         Destroy(impact, 2);
+        goBOOM.Play();
 
-        if(collision.gameObject.CompareTag("Player")) {
+        if (collision.gameObject.CompareTag("Player")) {
 
             
             PlayerHealthBar healthBar = collision.gameObject.GetComponent<PlayerHealthBar>();

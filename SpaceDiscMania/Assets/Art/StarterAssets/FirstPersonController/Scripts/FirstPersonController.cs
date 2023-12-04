@@ -15,6 +15,7 @@ namespace StarterAssets
 	{
 
 		public GameObject responpoint;
+		public AudioSource spawning;
 
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -277,8 +278,13 @@ namespace StarterAssets
 		private void OnCollisionEnter(Collision collision)
 		{
 			if (collision.gameObject.tag == "void")
-			{
+			{	
+				spawning.Play();
 				this.transform.position = responpoint.transform.position;
+
+				// virker ikke //
+				responpoint.GetComponent<AudioSource>().Play();
+				
 			}
 		}
 	}
