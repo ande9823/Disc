@@ -163,7 +163,7 @@ MonoBehaviour:
   impactEffect: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
   knockback: 5
   radius: 3
-  damageAmount: 15
+  damageAmount: 60
   goBOOM: {fileID: 5010602324562143132}
 --- !u!82 &5010602324562143132
 AudioSource:

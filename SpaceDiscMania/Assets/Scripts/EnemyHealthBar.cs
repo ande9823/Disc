@@ -15,6 +15,13 @@ public class EnemyHealthBar : MonoBehaviour
     public Animator animator;
 
     public GameObject SpilManager;
+    public GameObject ESpawner;
+
+    void Start()
+    {
+        SpilManager = GameObject.Find("SpilManager");
+        ESpawner = GameObject.Find("Espawn");
+    }
 
     public void SetHealth(int health)
     {
@@ -35,6 +42,7 @@ public class EnemyHealthBar : MonoBehaviour
             
             SpilManager.GetComponent<GameManager>().enemykilstat();
             Debug.Log("OneDown!");
+            ESpawner.GetComponent<EnemySpawner>().currentEnemys--;
 
         } else
         {
