@@ -1,4 +1,5 @@
-﻿using UnityEditor.SearchService;
+﻿using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -16,6 +17,8 @@ namespace StarterAssets
 
 		public GameObject responpoint;
 		public AudioSource spawning;
+		public TextMeshProUGUI FallsNumber;
+		int fallsNumber;
 
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -114,6 +117,7 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			fallsNumber = 0;
 		}
 
 		private void Update()
@@ -121,13 +125,20 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			if(this.gameObject.transform.position.y < -5)
-			{
-				this.gameObject.transform.position = responpoint.transform.position;
-			}
+			
 		}
 
-		private void LateUpdate()
+        private void FixedUpdate()
+        {
+            if (this.gameObject.transform.position.y < -5)
+            {
+                this.gameObject.transform.position = responpoint.transform.position;
+                fallsNumber++;
+                FallsNumber.text = fallsNumber.ToString();
+            }
+        }
+
+        private void LateUpdate()
 		{
 			CameraRotation();
 		}

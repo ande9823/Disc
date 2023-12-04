@@ -21214,6 +21214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   responpoint: {fileID: 216923794}
   spawning: {fileID: 5885216829670671801}
+  FallsNumber: {fileID: 1565887558}
   MoveSpeed: 10
   SprintSpeed: 15
   RotationSpeed: 5
