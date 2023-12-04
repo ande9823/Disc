@@ -14,7 +14,7 @@ public class EnemyHealthBar : MonoBehaviour
     public Slider HPbar;
     public Animator animator;
 
-    public GameObject SpilMangaer;
+    public GameObject SpilManager;
 
     public void SetHealth(int health)
     {
@@ -29,22 +29,15 @@ public class EnemyHealthBar : MonoBehaviour
         if (currentHealth < 0)
         {
             currentHealth = 0;
-        }
-
-        if (HPbar.value <= 1)
-        {
 
             animator.SetTrigger("death");
-            //GetComponent<CapsuleCollider>().enabled = false;
-            if (currentHealth == 0)
-            {
-                SpilMangaer.GetComponent<GameManager>().enemykilstat(); 
-                Debug.Log("OneDown!");
-            }
-        }
-        else
+            GetComponent<CapsuleCollider>().enabled = false;
+            
+            SpilManager.GetComponent<GameManager>().enemykilstat();
+            Debug.Log("OneDown!");
+
+        } else
         {
-            HPbar.value -= damageAmount;
             animator.SetTrigger("damage");
         }
     }

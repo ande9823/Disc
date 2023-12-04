@@ -1047,7 +1047,7 @@ MonoBehaviour:
   currentHealth: 100
   HPbar: {fileID: 3734130673691041019}
   animator: {fileID: 4221393549559255083}
-  SpilMangaer: {fileID: 1796724568464084765, guid: 875b1aa1f3bbdf741a2978fb4ec81d1e, type: 3}
+  SpilManager: {fileID: 0}
 --- !u!82 &-3077982017347860779
 AudioSource:
   m_ObjectHideFlags: 0

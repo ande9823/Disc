@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    private int Enemykill = 0;
+    private int Enemykill;
 
     public TextMeshProUGUI killerStat1;
     //public Text killerStat2;
-   
+
+    private void Start()
+    {
+        Enemykill = 0;
+    }
+
     private void Update()
     {
         killerStat1.text = Enemykill.ToString();
